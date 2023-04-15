@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --gradient: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+
+    --fs: 14px;
+    --ff: 'Raleway', sans-serif;
+    --fw-400: 400;
+    --fw-700: 700;
+}
+
+body {
+    font-family: var(--ff);
+    font-size: var(--fs);
+    background-color: var(--very-dark-blue);
+    background-image: url(/images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    padding: 2em;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    display: flex;
+    gap: 2em;
+    border: 2px solid red;
+}
+
+.primary-card {
+    background-color: var(--dark-blue);
+    padding: 3.5em;
+    border-radius: 10px 100px 10px 10px;
+    padding-right: 7em;
+}
+
+.icons {
+    display: flex;
+    margin-top: 2em;
+}
+
+.icon {
+    background-color: var(--very-dark-blue);
+    padding: 1em;
+    margin-right: 1.5em;
+    border-radius: 10px;
+}
+
+.secondary-card {
+    background-color: var(--dark-blue);
+    padding: 3.5em;
+    border-radius: 10px;
+    position: relative;
+    align-self: flex-end;
+}
+
+.title {
+    color: var(--pale-blue);
+    font-weight: var(--fw-400);
+}
+
+span {
+    color: var(--pale-blue);
+    font-weight: var(--fw-700);
+}
+
+.progress-bar {
+    width: 100%;
+    margin-top: 1em;
+    background-color: var(--very-dark-blue);
+    height: 17px;
+    padding: .2em;
+    border-radius: 10px;
+}
+
+.bar {
+    width: 81.5%;
+    height: 12px;
+    background-image: var(--gradient);
+    border-radius: 10px;
+}
+
+.space {
+    margin-top: .5em;
+    display: flex;
+    color: var(--pale-blue);
+    justify-content: space-between;
+}
+
+.remaining-space {
+    background-color: white;
+    position: absolute;
+    top: -25%;
+    right: 5%;
+    padding: 1.25em;
+    border-radius: 10px;
+}
+
+.remaining-space span {
+    color: var(--grayish-blue);
+    font-weight: var(--fw-400);
+    text-transform: uppercase;
+    font-size: var(--fs);
+}
+
+.remaining-space h2 {
+    font-size: 2.5rem;
+}
+
+@media (max-width: 700px) {
+
+    body {
+        background-image: url(/images/bg-mobile.png);
+        background-size: cover;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .remaining-space {
+        top: 85%;
+    }
+
+}
